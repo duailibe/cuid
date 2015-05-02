@@ -1,0 +1,2 @@
+defmodule Cuid do
+end
