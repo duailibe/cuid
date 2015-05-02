@@ -10,4 +10,4 @@ For full rationale behind CUIDs refer to the [main project site](http://usecuid.
 ### Credit
 
 * Lucas Duailibe
-* Eric Elliot (author of [original JavaScript version](http://github.com/ericelliot/cuid))
+* Eric Elliott (author of [original JavaScript version](http://github.com/ericelliott/cuid))
