@@ -5,8 +5,8 @@ defmodule Cuid.Mixfile do
     [app: :cuid,
      version: "0.0.1",
      elixir: "~> 1.0",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
+     description: "Generate collision-resistant ids, in Elixir",
+     package: package,
      deps: deps]
   end
 
@@ -16,5 +16,12 @@ defmodule Cuid.Mixfile do
 
   defp deps do
     []
+  end
+
+  defp package do
+    [files: ["lib", "mix.exs", "README.md", "LICENSE"],
+     contributors: ["Lucas Duailibe"],
+     licenses: ["MIT"],
+     links: %{ "GitHub" => "https://github.com/duailibe/cuid" }]
   end
 end
