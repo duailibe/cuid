@@ -1,2 +1,2 @@
-%{"exprintf": {:hex, :exprintf, "0.1.6"},
-  "exprof": {:git, "git://github.com/parroty/exprof.git", "5b1d1ad2fb7cc587042e4662216ecef27020e2ef", []}}
+%{"earmark": {:hex, :earmark, "0.1.15"},
+  "ex_doc": {:hex, :ex_doc, "0.7.2"}}

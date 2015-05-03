@@ -10,11 +10,11 @@ defmodule Cuid do
 
   Usage:
 
-    # Start the generator
-    {:ok, generator} = Cuid.start_link
+      # Start the generator
+      {:ok, generator} = Cuid.start_link
 
-    # Generate a new CUID
-    Cuid.generate(generator)
+      # Generate a new CUID
+      Cuid.generate(generator)
   """
 
   @doc """

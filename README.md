@@ -12,16 +12,16 @@ For full rationale behind CUIDs refer to the [main project site](http://usecuid.
 Add Cuid as a dependency in your `mix.exs` file:
 
 ```elixir
-    defp deps do:
-        [{:cuid, "~> 0.1.0"}]
-    end
+defp deps do:
+    [{:cuid, "~> 0.1.0"}]
+end
 ```
 
 Run `mix deps.get` to fetch and compile Cuid. It works as a process
 
 ```elixir
-    {:ok, pid} = Cuid.start_link
-    Cuid.generate(pid)  # => ch72gsb320000udocl363eofy
+{:ok, pid} = Cuid.start_link
+Cuid.generate(pid)  # => ch72gsb320000udocl363eofy
 ```
 
 Each CUID is made by the following groups: `c - h72gsb32 - 0000 - udoc - l363eofy`
