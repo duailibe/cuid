@@ -1,0 +1,2 @@
+%{"exprintf": {:hex, :exprintf, "0.1.6"},
+  "exprof": {:git, "git://github.com/parroty/exprof.git", "5b1d1ad2fb7cc587042e4662216ecef27020e2ef", []}}
