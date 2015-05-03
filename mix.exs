@@ -1,7 +1,7 @@
 defmodule Cuid.Mixfile do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.1.0"
 
   def project do
     [app: :cuid,
@@ -17,7 +17,7 @@ defmodule Cuid.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    []
   end
 
   defp deps do
