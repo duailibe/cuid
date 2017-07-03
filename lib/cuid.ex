@@ -19,6 +19,14 @@ defmodule Cuid do
     GenServer.call(generator, :generate)
   end
 
+  @doc """
+  Generates and returns a new Slug
+  """
+  @spec slug(generator :: pid) :: String.t
+  def slug(generator) do
+    GenServer.call(generator, :generate_slug)
+  end
+
   use GenServer
 
   @doc """
@@ -40,6 +48,18 @@ defmodule Cuid do
     ]) |> String.downcase
 
     {:reply, cuid, %{state | :count => count + 1}}
+  end
+
+  def handle_call(:generate_slug, _, %{:fingerprint => fingerprint, :count => count} = state) do
+    slug = Enum.join([
+      slice(timestamp, -2),
+      slice(format_counter(count), -4),
+      slice(fingerprint, 0..1),
+      slice(fingerprint, -1),
+      slice(random_block, -2)
+    ]) |> String.downcase
+
+    {:reply, slug, %{state | :count => count + 1}}
   end
 
   ## Helpers
@@ -77,5 +97,13 @@ defmodule Cuid do
 
     pid + hostid
     |> Integer.to_string(@base)
+  end
+
+  defp slice(str, beginIndex) when beginIndex >= 0 do
+    String.slice(str, beginIndex, String.length(str))
+  end
+
+  defp slice(str, beginIndex) when beginIndex < 0 do
+    String.slice(str, beginIndex, String.length(str) + beginIndex)
   end
 end
